@@ -1,5 +1,6 @@
 package com.example.shoppingcartv2.model;
 
+import com.example.shoppingcartv2.constants.UserGender;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
@@ -32,7 +33,8 @@ public class User {
     private Date dob;
 @Size(min = 18,message = "User 18+ only Allowed")
     private Integer age;
-    private String gender;
+@Enumerated(EnumType.STRING)
+    private UserGender userGender;
     private  String accountStatus;
     @Temporal(TemporalType.TIMESTAMP)
     private Date accountCreationDetails;
